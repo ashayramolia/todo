@@ -4,8 +4,9 @@ const app = express();
 const port = 8069; // change it to environment variable when publishing server
 // app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine','ejs')
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended:true}))
-var tasks = []
+let tasks = []
 
 app.get('/', (req, res) => {
     var today = new Date()

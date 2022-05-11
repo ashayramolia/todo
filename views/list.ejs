@@ -14,10 +14,6 @@
     <h1> TO-DO</h1>
     <div>
         <ul>
-            <li>Eat</li>
-            <li>Sleep</li>
-            <li>Rave</li>
-            <li>Repeat</li>
             <% for (let i = 0; i < tasks.length; i++) { %>
                 <li><%= tasks[i] %></li>
             <% } %>
@@ -26,7 +22,7 @@
     </div>
     <div>
         <form action="/" method="post">
-            <input type="text" name="newTask" placeholder="Task">
+            <input type="text" name="newTask" placeholder="Task" autofocus>
             <button type="submit" name="button">Add</button>
         </form>
     </div>
