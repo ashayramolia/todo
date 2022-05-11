@@ -9,19 +9,19 @@ app.use(express.static(__dirname+'/public'))
 let tasks = []
 let work = []
 
-// Date Logic 
-var today = new Date()
-var options = {weekday:"long",day:"numeric",month:"long",} 
-var day = today.toLocaleDateString('en-US',options)
-let mode = ''
-// Personal Life
+// For fetching the date using the date module created
+const date = require(__dirname+'/date')
+
+// Personal Life Mode
 app.get('/', (req, res) => {
+    let day = date.getDate()
     res.render('list', {date:day, tasks:tasks, type:''})
     // res.send('<h1>To-Do List</h1>')
 })
 
-// Work Life
+// Work Life Mode
 app.get('/work', (req, res) => {
+    let day = date.getDay()
     res.render('list',{date:`Work Mode | ${day}`,tasks:work,type:'work'})
 })
 
