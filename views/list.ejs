@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+</head>
+
+<body>
+    <h2><%= date %></h2>
+    <h1> TO-DO</h1>
+    <div>
+        <ul>
+            <li>Eat</li>
+            <li>Sleep</li>
+            <li>Rave</li>
+            <li>Repeat</li>
+            <% for (let i = 0; i < tasks.length; i++) { %>
+                <li><%= tasks[i] %></li>
+            <% } %>
+            
+        </ul>
+    </div>
+    <div>
+        <form action="/" method="post">
+            <input type="text" name="newTask" placeholder="Task">
+            <button type="submit" name="button">Add</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
